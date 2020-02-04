@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/main.css">
+	
+	<script src="webOSTVjs-1.1.0/webOSTV.js" charset="utf-8"></script>
+	<script src="webOSTVjs-1.1.0/webOSTV-dev.js" charset="utf-8"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+	<script type="text/javascript">
+	   //sample code for calling LS2 API
+       var lunaReq= webOS.service.request("luna://com.palm.systemservice",
+        {
+            method:"clock/getTime",
+            parameters:{},
+            onSuccess: function (args) {
+				console.log("UTC:", args.utc);
+            },
+            onFailure: function (args) {
+            }
+        });
+       	document.addEventListener("keydown", function(inEvent){
+       		var keycode;
+       		if(window.event) {
+       		    keycode = inEvent.keyCode;
+       		} else if(e.which) {
+       		    keycode = inEvent.which;
+       		}
+     		//var message = "<h1>" + "Keycode is <lg_red>" + inEvent.keyCode + "</lg_red></h1>"+ "</br>";
+       	   	//document.getElementById("results").innerHTML = message;
+   	 	});
+       	// Remote Control
+       	function doUp(){
+       		var message = "<h1>" + "Keycode is <lg_red>UP</lg_red></h1>"+ "</br>";
+       	    document.getElementById("results").innerHTML = message;
+       	    
+       	    return 0;
+       	}
+       	function doRight(){
+       		var message = "<h1>" + "Keycode is <lg_red>RIGHT</lg_red></h1>"+ "</br>";
+       	    document.getElementById("results").innerHTML = message;
+       	    
+       	    return 0;
+       	}
+       	function doDown(){
+       		var message = "<h1>" + "Keycode is <lg_red>DOWN</lg_red></h1>"+ "</br>";
+       	    document.getElementById("results").innerHTML = message;
+       	    
+       	    return 0;
+       	}
+       	
+       	// YouTuBe Trailer Player
+       	var player;
+       	function onYouTubeIframeAPIReady() {
+       	    player = new YT.Player('video-placeholder', {
+       	        videoId: '5XMgJ0p0Aww',
+	       	    width: 750,
+	            height: 350,
+       	        playerVars: {
+       	        	controls: 0,
+       	        	disablekb: 0,
+       	        	enablejsapi: 1,
+       	        	fs: 0,
+       	        	iv_load_policy: 3,
+       	        	modestbranding: 0,
+       	        	rel: 0,
+       	        	showinfo: 0
+       	        },
+       	        events: {
+       	            'onReady': onPlayerReady
+       	        }
+       	    });
+       	}
+       	function onPlayerReady(){
+       		player.playVideo();
+       		player.mute();
+       	}
+       	function doLeft(){
+       		var message = "<h1>" + "Keycode is <lg_red>LEFT</lg_red></h1>"+ "</br>";
+       	    document.getElementById("results").innerHTML = message;
+       	    return 0;
+       	}
+
+	</script>
+</head>
+<body>
+	<!-- <div class="sidenav">
+		<a href="#about"><img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-64.png"/></a>
+	  	<a href="#services"><img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-64.png"/></a>
+	  	<a href="#clients"><img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-64.png"/></a>
+	  	<a href="#contact"><img src="https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-64.png"/></a>
+	</div>-->
+	<div id="results" tabindex="0">
+		<div class="movie_card" id="bright" tabindex="0">
+		  <div class="info_section">
+		    <div class="movie_header">
+		      <h1>Bright</h1>
+		      <h4>2017, David Ayer</h4>
+		      <span class="minutes">117 min</span>
+		      <p class="type">Action, Crime, Fantasy</p>
+		    </div>
+		    <div class="movie_desc">
+		      <p class="text">
+		        Set in a world where fantasy creatures live side by side with humans. A human cop is forced to work with an Orc to find a weapon everyone is prepared to kill for. 
+		      </p>
+		    </div>
+		  </div>
+		  <div class="video-container">
+		  	<div class="blur_back bright_back" id="video-placeholder"></div>
+			</div>
+		</div>
+		<div class="moviePoster" style="padding: 25px;">
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+			<img src="https://m.media-amazon.com/images/M/MV5BMjI0NzcyMjM5Ml5BMl5BanBnXkFtZTgwMzk2NzAyNTM@._V1_.jpg" style="width: 200px;" tabindex="1"/>
+		</div>
+	</div>
+</body>
+</html>

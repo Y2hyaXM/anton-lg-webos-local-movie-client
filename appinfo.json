@@ -1,0 +1,10 @@
+{
+    "vendor": "Krzysztof Jaworski",
+    "largeIcon": "largeIcon.png",
+    "icon": "icon.png",
+    "main": "index.html",
+    "id": "ml.jaworski.anton",
+    "title": "Anton - Movie Center",
+    "type": "web",
+    "version": "0.0.1"
+}
